@@ -77,7 +77,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1.2 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex-1 flex justify-center items-centerrelative scale-125 pt-10"
+            className="flex-1 flex justify-center items-center relative scale-125 pt-10 pb-12 md:pb-0"
           >
             <div className="relative w-48 h-48 md:w-64 md:h-64">
               {/* Animated ring */}

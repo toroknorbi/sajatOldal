@@ -12,7 +12,12 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
     const saved = localStorage.getItem("portfolio-lang");
-    return (saved as Language) || "en";
+    // default to English if no setting exists
+    const lang = (saved as Language) || "en";
+    if (!saved) {
+      localStorage.setItem("portfolio-lang", lang);
+    }
+    return lang;
   });
 
   const handleSetLanguage = (lang: Language) => {
